@@ -89,8 +89,13 @@ abbr {
   margin-bottom: 15px;
 }
 
-.part-title {
-  
+.progress-container {
+  background-image: url(/public/images/spinner.gif);
+  background-repeat: no-repeat;
+  background-position: center top;
+  text-align: center;
+  padding-top: 40px;
+  min-height: 400px;
 }
 
 

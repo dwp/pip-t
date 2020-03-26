@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/v1/confirmation" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                How would you like to hear about updates on your claim?
+              </h1>
+            </legend>
+            <span id="citizenship-conditional-hint" class="govuk-hint">
+              Select all options that are relevant to you.
+            </span>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional">
+                <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+                  Email
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    Email address
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+                </div>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="citizenship-conditional-3" name="citizen" type="checkbox" value="text message" data-aria-controls="conditional-citizenship-conditional-3">
+                <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-3">
+                  Text message
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-text">
+                    Mobile phone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel">
+                </div>
+
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
+          Continue
+        </button>
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+    {% include "v1/_upload-sidebar.html" %}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}

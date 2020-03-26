@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+    	{{ govukPanel({
+        titleText: "PIP2 received"
+      }) }}
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>Information about what happens next goes here.</p>
+
+      <p><a href="https://www.gov.uk" class="govuk-button" data-module="govuk-button">Finish</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+    
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
