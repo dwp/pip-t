@@ -105,3 +105,16 @@ abbr {
 }
 
 
+.card {
+  border: 1px solid $govuk-border-colour;
+  margin-bottom: 20px;
+}
+
+.card-head {
+  padding: 1em;
+  background-color: govuk-colour("light-grey");
+}
+
+.card-body {
+  padding: 1em;
+}

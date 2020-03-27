@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ serviceName}} - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {% include "v1-serco/_header.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {{ govukPanel({
+        titleText: "Email sent to",
+        html: "email-just-entered@gmail.com"
+      }) }}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>If possible, check the claimant has received it.</p>
+
+      <p>It can sometimes take a few minutes for the email to arrive. Tell them to call XXXXXX if they don’t receive it within the next XXXXX.</p>
+
+      <p><a href="index" class="govuk-button" data-module="govuk-button">Next claimant</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
