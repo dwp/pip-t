@@ -1,49 +1,51 @@
-<h1 class="govuk-heading-l govuk-!-font-size-27">What you’ll get</h1>
+{% extends "layout.html" %}
 
-<p>Personal Independence Payment (<abbr title="Personal Independence Payment">PIP</abbr>) is tax free and you can get it whether you’re in or out of work.</p>
+{% block pageTitle %}
+  {{ serviceName}} - GOV.UK
+{% endblock %}
 
-<p>You’ll need an <a href="/pip/how-to-claim">assessment</a> to work out the level of help you’ll get. <a href="/pip/when-your-pip-claim-is-reviewed">Your rate will be regularly reviewed</a> to make sure you’re getting the right support.</p>
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
 
-<div class="govuk-inset-text">
-	<p>You need to tell <abbr title="Department for Work and Pensions">DWP</abbr> straight away if there’s a <a href="/pip/change-of-circumstances">change in your personal circumstances</a> or how your condition affects you.</p>
-</div>
+{% block content %}
 
-<p><abbr title="Personal Independence Payment">PIP</abbr> is made up of 2 parts. Whether you get one or both of these and how much you’ll get depends on how severely your condition affects you.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/v1/uploading" method="post" novalidate>
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Upload your PIP2 form
+            </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          </div>
+        </fieldset>
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
+          Continue
+        </button>
+      </form>
 
-<h2 class="govuk-heading-m" id="daily-living-part">Daily living part</h2>
+      <p>Reassure people they are in the right place.</p>
 
-<p>The weekly rate for the daily living part of <abbr title="Personal Independence Payment">PIP</abbr> is either £58.70 or £87.65.</p>
+      <p>Tell people what this is for if they got here by accident.</p>
 
-<h2 class="govuk-heading-m" id="mobility-part">Mobility part</h2>
+    </div>{# /govuk-grid-column-two-thirds #}
 
-<p>The weekly rate for the mobility part of <abbr title="Personal Independence Payment">PIP</abbr> is either £23.20 or £61.20.</p>
+    {% include "v1/_upload-sidebar.html" %}
 
-<h2 class="govuk-heading-m" id="terminal-illness">Terminal illness</h2>
+  </div>{# /govuk-grid-row #}
 
-<p>You’ll get the higher daily living part if you’re not expected to live more than 6 months. The rate of the mobility part depends on your needs.</p>
-
-<h2 class="govuk-heading-m" id="how-other-benefits-affect-your-pip">How other benefits affect your <abbr title="Personal Independence Payment">PIP</abbr>
-</h2>
-
-<p>If you get <abbr title="Personal Independence Payment">PIP</abbr> and <a href="/constant-attendance-allowance">Constant Attendance Allowance</a>, the ‘daily living’ part of your <abbr title="Personal Independence Payment">PIP</abbr> will be reduced by the amount of Constant Attendance Allowance you get.</p>
-
-<h2 class="govuk-heading-m" id="how-youre-paid">How you’re paid</h2>
-
-<p>Personal Independence Payment (<abbr title="Personal Independence Payment">PIP</abbr>) is usually paid every 4 weeks.</p>
-
-<p>Your decision letter will tell you:</p>
-
-<ul class="govuk-list govuk-list--bullet">
-  <li>the date of your first payment</li>
-  <li>what day of the week you’ll usually be paid</li>
-</ul>
-
-<p>If your payment date is on a bank holiday, you will usually be paid before the bank holiday. After that you’ll continue to get paid as normal.</p>
-
-<p>All benefits, pensions and allowances are paid into your <a href="/how-to-have-your-benefits-paid">bank, building society or credit union account</a>.</p>
-
-<h2 class="govuk-heading-m" id="other-help">Other help</h2>
-
-<p>You or your carer might also qualify for <a href="/financial-help-disabled">other financial help</a>, for example Carer’s Allowance, or help with housing or transport costs.</p>
-
-<p>If you get <abbr title="Personal Independence Payment">PIP</abbr> and you work, you might also be able to get the disability element of <a href="/working-tax-credit">Working Tax Credit</a> (up to £3,165 a year, or up to £4,530 if your disability is severe). <a href="/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries">Contact HM Revenue and Customs (HMRC)</a> to find out.</p>
+{% endblock %}
