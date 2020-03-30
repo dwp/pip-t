@@ -42,7 +42,7 @@
               File 1
             </dt>
             <dd class="govuk-summary-list__value">
-              <a download href="/">filenamewouldbehere.jpg</a>, 2MB
+              <a download href="/">{{ data['supporting-evidence-file-1'] }}</a>, 2MB
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -55,7 +55,7 @@
               File 2
             </dt>
             <dd class="govuk-summary-list__value">
-              <a download href="/">anotherfilehere.jpg</a>, 5MB
+              <a download href="/">{{ data['supporting-evidence-file-2'] }}</a>, 5MB
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -68,10 +68,10 @@
               File 3
             </dt>
             <dd class="govuk-summary-list__value">
-              <a download href="/">thisisanotherfile.jpg</a>, 6MB
+              <a download href="/">{{ data['supporting-evidence-file-3'] }}</a>, 6MB
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/v1/supporting-evidence-uploaded-2?delete=true">
                 Delete<span class="govuk-visually-hidden"> file 3</span>
               </a>
             </dd>

@@ -32,6 +32,14 @@
 
       <form action="/v1/supporting-evidence-uploaded-1-data" method="post" novalidate>
 
+      {% if getData.delete == "true" %}
+        <div class="moj-banner moj-banner--success">
+          <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25"><path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z"></path></svg>
+          <div class="moj-banner__message">
+            <span class="moj-banner__assistive">Success</span>File named {{ data['supporting-evidence-file-2'] }} has been deleted</div>
+        </div>{# /moj-banner #}
+      {% endif %}
+
         <h1 class="govuk-heading-l">Check the uploaded evidence</h1>
 
         <h2 class="govuk-heading-m">Files added</h2>
@@ -42,27 +50,14 @@
               File 1
             </dt>
             <dd class="govuk-summary-list__value">
-              <a download href="/">filenamewouldbehere.jpg</a>, 2MB
+              <a download href="/">{{ data['supporting-evidence-file-1'] }}</a>, 2MB
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="/v1/supporting-evidence-upload-1?delete=true">
                 Delete<span class="govuk-visually-hidden"> file 1</span>
               </a>
             </dd>
           </div>
-  {#         <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              File 2
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <a download href="/">receipt2.jpg</a>, 5MB
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Delete<span class="govuk-visually-hidden"> file 2</span>
-              </a>
-            </dd>
-          </div> #}
         </dl>
 
         <div class="govuk-form-group">
