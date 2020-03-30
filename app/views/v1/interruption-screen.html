@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set pageTitle = "Save and upload your evidence – Send your PIP form – GOV.UK" %}
+{% set pageTitle = "How to take a photo of your evidence – Send your PIP form – GOV.UK" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
@@ -18,7 +18,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "v1/_work-in-progress.html" %}
+  {% include "includes/_work-in-progress.html" %}
   {{ govukBackLink({
     text: "Back",
     href: "/v1/supporting-evidence"
@@ -30,20 +30,16 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Save and upload your evidence</h1>
+      <h1 class="govuk-heading-l">How to take a photo of your evidence</h1>
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half">
-          <ol class="govuk-list govuk-list--number">
-              <li>Take a photo of your document or scan it to your computer</li>
-              <li>Make sure:</li>
-              <ul class="govuk-list govuk-list--bullet">
-                <li>you’re in a well lit place</li>
-                <li>all of the document is in the image</li>
-              </ul>
-              <li>Save the photo or scan of your document note somewhere you can easily find it on your computer</li>
-          </ol>
-          <p>Your photo or scan will be automatically checked to make sure it's good enough.</p>
+          <p>Make sure:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>you’re in a well lit place</li>
+            <li>all of the document is in the image</li>
+            <li>you take the photo from above and not at an angle</li>
+          </ul>
           <p><a href="#">Get more help to get your photo right</a></p>
         </div>{# /govuk-grid-column-one-half #}
 
@@ -53,7 +49,7 @@
 
       </div>{# /govuk-grid-row #}
 
-      <a href="supporting-evidence-upload-1" class="govuk-button" data-module="govuk-button">Choose a file to upload</a>
+      <a href="supporting-evidence-upload-1" class="govuk-button" data-module="govuk-button">Continue to upload</a>
 
     </div>{# /govuk-grid-column-two-thirds #}
 

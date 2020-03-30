@@ -42,5 +42,27 @@ router.get('/v1/supporting-evidence-uploaded-1-data', function(req, res) {
     }
 });
 
+router.get('/v1/supporting-evidence-uploaded-2-data', function(req, res) {
+
+  let question = req.session.data['question']
+
+  if (question === 'yes') {
+      res.redirect('supporting-evidence-upload-3')
+    } else {
+      res.redirect('notifications')
+    }
+});
+
+router.get('/v1/supporting-evidence-uploaded-3-data', function(req, res) {
+
+  let question = req.session.data['question']
+
+  if (question === 'yes') {
+      res.redirect('supporting-evidence-upload-4')
+    } else {
+      res.redirect('notifications')
+    }
+});
+
 
 module.exports = router

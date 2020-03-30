@@ -18,7 +18,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {% include "v1/_work-in-progress.html" %}
+  {% include "includes/_work-in-progress.html" %}
 {% endblock %}
 
 {% block content %}
@@ -38,6 +38,18 @@
     <script>
       setTimeout(function(){
         window.location.href = '/v1/supporting-evidence-uploaded-1';
+      }, 2000);
+    </script>
+  {% elif getData.type == "supporting-evidence2" %}
+    <script>
+      setTimeout(function(){
+        window.location.href = '/v1/supporting-evidence-uploaded-2';
+      }, 2000);
+    </script>
+  {% elif getData.type == "supporting-evidence3" %}
+    <script>
+      setTimeout(function(){
+        window.location.href = '/v1/supporting-evidence-uploaded-3';
       }, 2000);
     </script>
   {% else %}

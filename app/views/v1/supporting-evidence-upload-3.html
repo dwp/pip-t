@@ -1,7 +1,6 @@
 {% extends "layout.html" %}
 
-{% set pageTitle = "Upload your completed PIP form
- – Send your PIP form – GOV.UK" %}
+{% set pageTitle = "Upload evidence – Send your PIP form – GOV.UK" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
@@ -19,10 +18,11 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/_work-in-progress.html" %}
+  {% include "includes/_work-in-progress.html" %}
+
   {{ govukBackLink({
     text: "Back",
-    href: "/v1/start"
+    href: "/v1/supporting-evidence-uploaded-1"
   }) }}
 {% endblock %}
 
@@ -30,11 +30,11 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/v1/uploading" method="post" novalidate>
+      <form action="/v1/uploading?type=supporting-evidence3"novalidate>
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Upload your completed PIP form
+              Upload evidence
             </h1>
           </legend>
           <div class="govuk-form-group">
@@ -44,9 +44,12 @@
             <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
           </div>
         </fieldset>
-        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
+{#         <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
           Continue
-        </button>
+        </button> #}
+
+        <a href="uploading?type=supporting-evidence3" class="govuk-button" data-module="govuk-button">Continue</a>
+        
       </form>
 
     </div>{# /govuk-grid-column-two-thirds #}
