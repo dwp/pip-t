@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set pageTitle = "Upload evidence – Send your PIP form - GOV.UK" %}
+
 {% block pageTitle %}
-  {{ serviceName}} - GOV.UK
+  {{ pageTitle }}
 {% endblock %}
 
 {% block header %}
@@ -55,5 +57,7 @@
     {% include "v1/_upload-sidebar.html" %}
 
   </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
 
 {% endblock %}

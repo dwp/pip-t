@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set pageTitle = "PIP form received - Send your PIP form - GOV.UK" %}
+
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  {{ pageTitle }}
 {% endblock %}
 
 {% block header %}
@@ -25,7 +27,7 @@
     <div class="govuk-grid-column-full">
 
     	{{ govukPanel({
-        titleText: "PIP received"
+        titleText: "PIP form received"
       }) }}
 
       <h2 class="govuk-heading-m">What happens next</h2>
@@ -42,5 +44,7 @@
     </div>{# /govuk-grid-column-two-thirds #}
     
   </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
 
 {% endblock %}

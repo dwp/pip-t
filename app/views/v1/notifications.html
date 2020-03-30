@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set pageTitle = "Updates on your claim - Send your PIP form - GOV.UK" %}
+
 {% block pageTitle %}
-  Updates on your claim - {{ serviceName}} - GOV.UK
+  {{ pageTitle }}
 {% endblock %}
 
 {% block header %}
@@ -83,5 +85,7 @@
     {% include "v1/_upload-sidebar.html" %}
 
   </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
 
 {% endblock %}

@@ -1,7 +1,10 @@
 {% extends "layout.html" %}
 
+{% set pageTitle = "Error – Upload your completed PIP form
+ – Send your PIP form - GOV.UK" %}
+
 {% block pageTitle %}
-  Error - {{ serviceName}} - GOV.UK
+  {{ pageTitle }}
 {% endblock %}
 
 {% block header %}
@@ -252,5 +255,7 @@
     {% include "v1/_upload-sidebar.html" %}
 
   </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
 
 {% endblock %}

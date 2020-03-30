@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set pageTitle = "Your session has ended – Send your PIP form - GOV.UK" %}
+
 {% block pageTitle %}
-  Session ended - {{ serviceName}} - GOV.UK
+  {{ pageTitle }}
 {% endblock %}
 
 {% block header %}
@@ -31,5 +33,7 @@
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
 
 {% endblock %}
