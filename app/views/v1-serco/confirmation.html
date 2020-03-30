@@ -2,6 +2,10 @@
 
 {% set pageTitle = "Email sent – Email a PIP2 form" %}
 
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
 {% block header %}
   {% include "v1-serco/_header.html" %}
 {% endblock %}
