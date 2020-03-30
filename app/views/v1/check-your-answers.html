@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Check your answers – Send your PIP form – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/_work-in-progress.html" %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/v1/notifications"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Check your answers before sending</h1>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "PIP form"
+            },
+            value: {
+              html: "<a href='/v1/upload?cya=true'>formthisissomething.pdf</a>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/v1/upload?cya=true",
+                  text: "Change",
+                  visuallyHiddenText: "PIP form"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Evidence"
+            },
+            value: {
+              html: "
+              <span class='govuk-table__cell--numeric'>File 1:</span> <a href='#'>thisisanevidencedoc.jpg</a><br>
+              <span class='govuk-table__cell--numeric'>File 2:</span> <a href='#'>somethingelsehere.jpg</a><br>
+              <span class='govuk-table__cell--numeric'>File 3:</span> <a href='#'>somethinge.jpg</a>"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/v1/supporting-evidence-uploaded-3",
+                  text: "Change",
+                  visuallyHiddenText: "evidence"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Updates on your claim"
+            },
+            value: {
+              html: "Text: 07702 245 567<br>Email: testing.test@gmail.com"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/v1/notifications?cya=true",
+                  text: "Change",
+                  visuallyHiddenText: "updates on your claim"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-heading-m">Now send your files</h2>
+
+      <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="/v1/confirmation" method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+    
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

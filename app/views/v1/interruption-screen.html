@@ -49,7 +49,15 @@
 
       </div>{# /govuk-grid-row #}
 
-      <a href="supporting-evidence-upload-1" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+      {% if getData.uploaded === '3' %}
+        <a href="supporting-evidence-uploaded-3" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+      {% elif getData.uploaded === '2' %}
+        <a href="supporting-evidence-uploaded-2" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+      {% elif getData.uploaded === '1' %}
+        <a href="supporting-evidence-uploaded-1" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+      {% else %}
+        <a href="supporting-evidence-upload-1" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+      {% endif %}
 
     </div>{# /govuk-grid-column-two-thirds #}
 
