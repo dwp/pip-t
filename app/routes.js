@@ -18,4 +18,29 @@ router.use(function(req, res, next){
   next();
 });
 
+// Routes
+
+router.get('/v1/supporting-evidence-data', function(req, res) {
+
+  let question = req.session.data['question']
+
+  if (question === 'yes') {
+      res.redirect('interruption-screen')
+    } else {
+      res.redirect('notifications')
+    }
+});
+
+router.get('/v1/supporting-evidence-uploaded-1-data', function(req, res) {
+
+  let question = req.session.data['question']
+
+  if (question === 'yes') {
+      res.redirect('supporting-evidence-upload-2')
+    } else {
+      res.redirect('notifications')
+    }
+});
+
+
 module.exports = router

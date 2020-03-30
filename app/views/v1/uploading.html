@@ -15,6 +15,10 @@
   }) }}
 {% endblock %}
 
+{% block beforeContent %}
+  {% include "v1/_work-in-progress.html" %}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -28,10 +32,18 @@
 
   </div>{# /govuk-grid-row #}
 
-  <script>
-     setTimeout(function(){
-        window.location.href = '/v1/notifications';
-     }, 5000);
-  </script>
+  {% if getData.type == "supporting-evidence" %}
+    <script>
+      setTimeout(function(){
+        window.location.href = '/v1/supporting-evidence-uploaded-1';
+      }, 2000);
+    </script>
+  {% else %}
+    <script>
+      setTimeout(function(){
+        window.location.href = '/v1/uploaded-1';
+      }, 2000);
+    </script>
+  {% endif %}
 
 {% endblock %}

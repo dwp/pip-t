@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ serviceName}} - GOV.UK
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v1/_work-in-progress.html" %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/v1/upload"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Your added file</h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__value">
+            <a download href="/">PIP-form.pdf</a>, 2MB
+          </dt>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/v1/upload">
+              Delete<span class="govuk-visually-hidden"> file</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <a href="/v1/supporting-evidence" class="govuk-button" data-module="govuk-button">Confirm and continue</a>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+    {% include "v1/_upload-sidebar.html" %}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
