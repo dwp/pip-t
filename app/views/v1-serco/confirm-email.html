@@ -1,7 +1,9 @@
 {% extends "layout.html" %}
 
+{% set pageTitle = "Confirm their email address – Email a PIP2 form" %}
+
 {% block pageTitle %}
-  {{ serviceName}} - GOV.UK
+  {{ pageTitle }}
 {% endblock %}
 
 {% block header %}
@@ -33,5 +35,7 @@
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
 
 {% endblock %}
