@@ -66,18 +66,13 @@
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            <span style="color: red">Updates on your claim</span>
+            Confirmation text message
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if checked("notifications", "email") and checked("notifications", "text message") %}
-              Email: {{ data['contact-by-email'] }}<br>
-              Text: {{ data['contact-by-text'] }}
-            {% elif checked("notifications", "email") %}
-              Email: {{ data['contact-by-email'] }}
-            {% elif checked("notifications", "text message") %}
-              Text message: {{ data['contact-by-text'] }}
+            {% if checked("how-contacted", "text") %}
+              Yes: {{ data['contact-by-text'] }}
             {% else %}
-              None
+              No
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
