@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Updates on your claim – Send your PIP form – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/_work-in-progress.html" %}
+  {% if getData.cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v0/check-your-answers"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v0/supporting-evidence"
+    }) }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/v0/check-your-answers" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you want a text message to confirm your PIP form has been received?
+              </h1>
+            </legend>
+{#             <span id="how-contacted-conditional-hint" class="govuk-hint">
+              Select one option.
+            </span> #}
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-text">
+                    Mobile phone number
+                  </label>
+                  <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-text" name="contact-by-text" type="tel" value="{{ data['contact-by-text'] }}">
+                </div>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+                <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+                  No
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
+          Continue
+        </button>
+
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+    {% include "v0/_upload-sidebar.html" %}
+
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

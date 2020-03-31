@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Check your answers – Send your PIP form – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/_work-in-progress.html" %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/v0/notifications"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Check before sending</h1>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            PIP form
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <a href='/v0/upload?cya=true'>{{ data['file-upload-1'] }}</a>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/v0/upload?cya=true">
+              Change<span class="govuk-visually-hidden"> PIP form</span>
+            </a>
+          </dd>
+        </div>{# /govuk-summary-list__row #}
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <span>Confirmation text message</span>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes: 07702 423 345
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/v0/notifications?cya=true">
+              Change<span class="govuk-visually-hidden"> updates on your claim</span>
+            </a>
+          </dd>
+        </div>{# /govuk-summary-list__row #}
+
+      </dl>
+      
+      <form action="/v0/confirmation" method="post" novalidate>
+        <input type="hidden" name="answers-checked" value="true">
+        {{ govukButton({
+          text: "Send form"
+        }) }}
+      </form>
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+    
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}
