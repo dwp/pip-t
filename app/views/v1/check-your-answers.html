@@ -66,10 +66,19 @@
       
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Updates on your claim
+            <span style="color: red">Updates on your claim</span>
           </dt>
           <dd class="govuk-summary-list__value">
-            Email: testing.test@gmail.com<br>Text: 07702 245 567
+            {% if checked("notifications", "email") and checked("notifications", "text message") %}
+              Email: {{ data['contact-by-email'] }}<br>
+              Text: {{ data['contact-by-text'] }}
+            {% elif checked("notifications", "email") %}
+              Email: {{ data['contact-by-email'] }}
+            {% elif checked("notifications", "text message") %}
+              Text message: {{ data['contact-by-text'] }}
+            {% else %}
+              None
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="/v1/notifications?cya=true">
