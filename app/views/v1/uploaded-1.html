@@ -19,10 +19,19 @@
 
 {% block beforeContent %}
   {% include "includes/_work-in-progress.html" %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "/v1/upload"
-  }) }}
+
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/upload-cya"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/upload"
+    }) }}
+  {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -38,14 +47,25 @@
             <a download href="/">{{ data['file-upload-1'] }}</a>, 2MB
           </dt>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/v1/upload?delete=true">
-              Delete<span class="govuk-visually-hidden"> file</span>
-            </a>
+
+            {% if cya == "true" %}
+              <a class="govuk-link" href="/v1/upload-cya?delete=true">
+                Delete<span class="govuk-visually-hidden"> file</span>
+              </a>
+            {% else %}
+              <a class="govuk-link" href="/v1/upload?delete=true">
+                Delete<span class="govuk-visually-hidden"> file</span>
+              </a>
+            {% endif %}
           </dd>
         </div>
       </dl>
 
-      <a href="/v1/supporting-evidence" class="govuk-button" data-module="govuk-button">Confirm and continue</a>
+      {% if cya == "true" %}
+        <a href="/v1/check-your-answers" class="govuk-button" data-module="govuk-button">Confirm and continue</a>
+      {% else %}
+        <a href="/v1/supporting-evidence" class="govuk-button" data-module="govuk-button">Confirm and continue</a>
+      {% endif %}
 
     </div>{# /govuk-grid-column-two-thirds #}
 

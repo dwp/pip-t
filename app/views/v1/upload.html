@@ -19,11 +19,21 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/_work-in-progress.html" %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "/v1/start"
-  }) }}
+
+  {% include "includes/_work-in-progress.html" %}
+
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/check-your-answers"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/start"
+    }) }}
+  {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -39,7 +49,12 @@
         </div>{# /moj-banner #}
       {% endif %}
 
-      <form action="/v1/uploading" method="post" novalidate>
+      {% if cya == "true" %}
+        <form action="/v1/uploading-cya" method="post" novalidate>
+      {% else %}
+        <form action="/v1/uploading" method="post" novalidate>
+      {% endif %}
+
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">

@@ -42,7 +42,7 @@
             <a href='/v1/upload?cya=true'>{{ data['file-upload-1'] }}</a>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/v1/upload?cya=true">
+            <a class="govuk-link" href="/v1/upload-cya">
               Change<span class="govuk-visually-hidden"> PIP form</span>
             </a>
           </dd>
@@ -69,19 +69,19 @@
           </dd>
           <dd class="govuk-summary-list__actions">
             {% if data['supporting-evidence-file-3'] %}
-              <a class="govuk-link" href="/v1/supporting-evidence-uploaded-3">
+              <a class="govuk-link" href="/v1/supporting-evidence-uploaded-3-cya">
                 Change<span class="govuk-visually-hidden"> evidence</span>
               </a>
             {% elif data['supporting-evidence-file-2'] %}
-              <a class="govuk-link" href="/v1/supporting-evidence-uploaded-2">
+              <a class="govuk-link" href="/v1/supporting-evidence-uploaded-2-cya">
                 Change<span class="govuk-visually-hidden"> evidence</span>
               </a>
             {% elif data['supporting-evidence-file-1'] %}
-              <a class="govuk-link" href="/v1/supporting-evidence-uploaded-1">
+              <a class="govuk-link" href="/v1/supporting-evidence-uploaded-1-cya">
                 Change<span class="govuk-visually-hidden"> evidence</span>
               </a>
             {% else %}
-              <a class="govuk-link" href="/v1/supporting-evidence">
+              <a class="govuk-link" href="/v1/supporting-evidence-cya">
                 Change<span class="govuk-visually-hidden"> evidence</span>
               </a>
             {% endif %}
@@ -100,7 +100,7 @@
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="/v1/notifications?cya=true">
+            <a class="govuk-link" href="/v1/notifications-cya">
               Change<span class="govuk-visually-hidden"> updates on your claim</span>
             </a>
           </dd>

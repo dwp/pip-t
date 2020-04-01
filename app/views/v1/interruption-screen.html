@@ -19,10 +19,19 @@
 
 {% block beforeContent %}
   {% include "includes/_work-in-progress.html" %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "/v1/supporting-evidence"
-  }) }}
+
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/supporting-evidence-cya"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/supporting-evidence"
+    }) }}
+  {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -50,13 +59,37 @@
       </div>{# /govuk-grid-row #}
 
       {% if getData.uploaded === '3' %}
-        <a href="supporting-evidence-uploaded-3" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        
+        {% if cya == "true" %}
+          <a href="supporting-evidence-uploaded-3-cya" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        {% else %}
+          <a href="supporting-evidence-uploaded-3" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        {% endif %}
+
       {% elif getData.uploaded === '2' %}
-        <a href="supporting-evidence-uploaded-2" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+
+        {% if cya == "true" %}
+          <a href="supporting-evidence-uploaded-2-cya" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        {% else %}
+          <a href="supporting-evidence-uploaded-2" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        {% endif %}
+
       {% elif getData.uploaded === '1' %}
-        <a href="supporting-evidence-uploaded-1" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+
+        {% if cya == "true" %}
+          <a href="supporting-evidence-uploaded-1-cya" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        {% else %}
+          <a href="supporting-evidence-uploaded-1" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        {% endif %}
+
       {% else %}
-        <a href="supporting-evidence-upload-1" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+
+        {% if cya == "true" %}
+          <a href="supporting-evidence-upload-1-cya" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        {% else %}
+          <a href="supporting-evidence-upload-1" class="govuk-button" data-module="govuk-button">Continue to upload</a>
+        {% endif %}
+
       {% endif %}
 
     </div>{# /govuk-grid-column-two-thirds #}

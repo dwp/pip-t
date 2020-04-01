@@ -34,32 +34,63 @@
 
   </div>{# /govuk-grid-row #}
 
-  {{ name }}
 
   {% if file == "supporting-evidence-1" %}
-    <script>
-      setTimeout(function(){
-        window.location.href = '/v1/supporting-evidence-uploaded-1';
-      }, 2000);
-    </script>
+    {% if cya == "true" %}
+      <script>
+        setTimeout(function(){
+          window.location.href = '/v1/supporting-evidence-uploaded-1-cya';
+        }, 2000);
+      </script>
+    {% else %}
+      <script>
+        setTimeout(function(){
+          window.location.href = '/v1/supporting-evidence-uploaded-1';
+        }, 2000);
+      </script>
+    {% endif %}
   {% elif file == "supporting-evidence-2" %}
-    <script>
-      setTimeout(function(){
-        window.location.href = '/v1/supporting-evidence-uploaded-2';
-      }, 2000);
-    </script>
+    {% if cya == "true" %}
+      <script>
+        setTimeout(function(){
+          window.location.href = '/v1/supporting-evidence-uploaded-2-cya';
+        }, 2000);
+      </script>
+    {% else %}
+      <script>
+        setTimeout(function(){
+          window.location.href = '/v1/supporting-evidence-uploaded-2';
+        }, 2000);
+      </script>
+    {% endif %}
   {% elif file == "supporting-evidence-3" %}
-    <script>
-      setTimeout(function(){
-        window.location.href = '/v1/supporting-evidence-uploaded-3';
-      }, 2000);
-    </script>
+    {% if cya == "true" %}
+      <script>
+        setTimeout(function(){
+          window.location.href = '/v1/supporting-evidence-uploaded-3-cya';
+        }, 2000);
+      </script>
+    {% else %}
+      <script>
+        setTimeout(function(){
+          window.location.href = '/v1/supporting-evidence-uploaded-3';
+        }, 2000);
+      </script>
+    {% endif %}
   {% else %}
-    <script>
-      setTimeout(function(){
-        window.location.href = '/v1/uploaded-1';
-      }, 2000);
-    </script>
+    {% if cya == "true" %}
+      <script>
+        setTimeout(function(){
+          window.location.href = '/v1/uploaded-1-cya';
+        }, 2000);
+      </script>
+    {% else %}
+      <script>
+        setTimeout(function(){
+          window.location.href = '/v1/uploaded-1';
+        }, 2000);
+      </script>
+    {% endif %}
   {% endif %}
 
   {% include "includes/_page-title.html" %}

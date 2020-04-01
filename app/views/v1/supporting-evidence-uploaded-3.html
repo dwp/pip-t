@@ -19,10 +19,19 @@
 
 {% block beforeContent %}
   {% include "includes/_work-in-progress.html" %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "/v1/interruption-screen?uploaded=3"
-  }) }}
+
+  {% if getData.cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/check-your-answers"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/interruption-screen?uploaded=3"
+    }) }}
+  {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -30,7 +39,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/v1/supporting-evidence-uploaded-2-data" method="post" novalidate>
+      {% if getData.cya == "true" %}
+        <form action="/v1/supporting-evidence-uploaded-3-data-cya" method="post" novalidate>
+      {% else %}
+        <form action="/v1/supporting-evidence-uploaded-3-data" method="post" novalidate>
+      {% endif %}
 
         <h1 class="govuk-heading-l">Check the uploaded evidence</h1>
 

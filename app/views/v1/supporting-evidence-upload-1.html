@@ -18,11 +18,21 @@
 {% endblock %}
 
 {% block beforeContent %}
+
   {% include "includes/_work-in-progress.html" %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "/v1/interruption-screen"
-  }) }}
+
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/interruption-screen-cya"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/interruption-screen"
+    }) }}
+  {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -37,8 +47,13 @@
             <span class="moj-banner__assistive">Success</span>File named {{ data['supporting-evidence-file-1'] }} has been deleted</div>
         </div>{# /moj-banner #}
       {% endif %}
+
+      {% if cya == "true" %}
+        <form action="/v1/uploading-supporting-evidence-1-cya" method="post" novalidate>
+      {% else %}
+        <form action="/v1/uploading-supporting-evidence-1" method="post" novalidate>
+      {% endif %}
       
-      <form action="/v1/uploading-supporting-evidence-1" method="post" novalidate>
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
