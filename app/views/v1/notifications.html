@@ -19,7 +19,7 @@
 
 {% block beforeContent %}
   {% include "includes/_work-in-progress.html" %}
-  {% if getData.cya == "true" %}
+  {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
       href: "/v1/check-your-answers"

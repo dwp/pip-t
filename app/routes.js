@@ -193,4 +193,8 @@ router.get('/v1/supporting-evidence-uploaded-3-data-cya', function(req, res) {
     }
 });
 
+router.get('/v1/notifications-cya', function(req, res) {
+  res.render('v1/notifications', { 'cya' : 'true' });
+});
+
 module.exports = router
