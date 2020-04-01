@@ -167,7 +167,7 @@ router.get('/v1/supporting-evidence-uploaded-1-data-cya', function(req, res) {
   if (question === 'yes') {
       res.redirect('supporting-evidence-upload-2-cya')
     } else {
-      res.redirect('v1/check-your-answers')
+      res.redirect('check-your-answers')
     }
 });
 
@@ -178,7 +178,7 @@ router.get('/v1/supporting-evidence-uploaded-2-data-cya', function(req, res) {
   if (question === 'yes') {
       res.redirect('supporting-evidence-upload-3-cya')
     } else {
-      res.redirect('v1/check-your-answers')
+      res.redirect('check-your-answers')
     }
 });
 
@@ -189,12 +189,8 @@ router.get('/v1/supporting-evidence-uploaded-3-data-cya', function(req, res) {
   if (question === 'yes') {
       res.redirect('supporting-evidence-upload-4-cya')
     } else {
-      res.redirect('v1/check-your-answers')
+      res.redirect('check-your-answers')
     }
 });
-
-
-
-
 
 module.exports = router

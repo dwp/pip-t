@@ -20,10 +20,18 @@
 {% block beforeContent %}
   {% include "includes/_work-in-progress.html" %}
 
-  {{ govukBackLink({
-    text: "Back",
-    href: "/v1/supporting-evidence-uploaded-1"
-  }) }}
+  {% if cya == "true" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/supporting-evidence-uploaded-2-cya"
+    }) }}
+  {% else %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "/v1/supporting-evidence-uploaded-2"
+    }) }}
+  {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -31,7 +39,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       
-      <form action="/v1/uploading-supporting-evidence-3" method="post" novalidate>
+      {% if cya == "true" %}
+        <form action="/v1/uploading-supporting-evidence-3-cya" method="post" novalidate>
+      {% else %}
+        <form action="/v1/uploading-supporting-evidence-3" method="post" novalidate>
+      {% endif %}
         <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">

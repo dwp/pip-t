@@ -20,7 +20,7 @@
 {% block beforeContent %}
   {% include "includes/_work-in-progress.html" %}
   
-  {% if getData.cya == "true" %}
+  {% if cya == "true" %}
     {{ govukBackLink({
       text: "Back",
       href: "/v1/check-your-answers"
@@ -39,7 +39,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if getData.cya == "true" %}
+      {% if cya == "true" %}
         <form action="/v1/supporting-evidence-uploaded-1-data-cya" method="post" novalidate>
       {% else %}
         <form action="/v1/supporting-evidence-uploaded-1-data" method="post" novalidate>
