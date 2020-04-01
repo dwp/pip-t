@@ -148,6 +148,18 @@ router.get('/v1/supporting-evidence-upload-3-cya', function(req, res) {
   res.render('v1/supporting-evidence-upload-3', { 'cya' : 'true' });
 });
 
+router.get('/v1/supporting-evidence-uploaded-1-cya', function(req, res) {
+  res.render('v1/supporting-evidence-uploaded-1', { 'cya' : 'true' });
+});
+
+router.get('/v1/supporting-evidence-uploaded-2-cya', function(req, res) {
+  res.render('v1/supporting-evidence-uploaded-2', { 'cya' : 'true' });
+});
+
+router.get('/v1/supporting-evidence-uploaded-3-cya', function(req, res) {
+  res.render('v1/supporting-evidence-uploaded-3', { 'cya' : 'true' });
+});
+
 router.get('/v1/supporting-evidence-uploaded-1-data-cya', function(req, res) {
 
   let question = req.session.data['question']
