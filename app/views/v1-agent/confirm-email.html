@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block header %}
-  {% include "v1-serco/_header.html" %}
+  {% include "v1-agent/_header.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,7 +19,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/v1-serco/confirmation" method="post" novalidate>
+      <form action="/v1-agent/confirmation" method="post" novalidate>
       
         <h1 class="govuk-heading-l">Confirm their email address</h1>
 
@@ -29,7 +29,7 @@
           This is correct, send the email
         </button>
         &nbsp;
-        <a href="/v1-serco/index" class="govuk-button govuk-button--secondary" data-module="govuk-button">There’s a mistake, go back</a>
+        <a href="/v1-agent/index" class="govuk-button govuk-button--secondary" data-module="govuk-button">There’s a mistake, go back</a>
 
       </form>
 

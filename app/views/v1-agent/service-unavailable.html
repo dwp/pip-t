@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
-{% set pageTitle = "Your session has ended – Email a PIP2 form" %}
+{% set pageTitle = "Service unavailable – Email a PIP2 form" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
 {% endblock %}
 
 {% block header %}
-  {% include "v1-serco/_header.html" %}
+  {% include "v1-agent/_header.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,10 +19,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Your session has ended</h1>
-      <p>Because you haven’t done anything for 20 minutes, your session has ended. Your application hasn’t been submitted.</p>
-      <p>The information you’ve entered has been deleted to protect your privacy.</p>
-      <p>You’ll need to <a href="/v1-serco/index">start again</a>.</p>
+      <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
+
+      <p>We are currently working to put the service back online. Please try again later.</p>
 
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
