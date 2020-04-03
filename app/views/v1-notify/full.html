@@ -1,0 +1,141 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Personal Independence Payment: Tell us how your health condition or disability affects you" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/_work-in-progress.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds sans">
+
+      <p>Dear Sarah,</p>
+
+      <h2 class="govuk-heading-m">Tell us how your health condition or disability affects you</h2>
+
+      <p>Thank you for starting your Personal Independence Payment (PIP) claim.</p>
+
+      <p>We need to find out more information about your daily living and mobility needs to help us make our decision.</p>
+
+      <h2 class="govuk-heading-m">What you need to do</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>read the form, the information booklet and flyer sent with this email</li>
+        <li>start collecting supporting evidence to support your claim</li>
+        <li>fill in the ‘How your disability affects you’ form</li>
+        <li>type your name in the signature box and complete all other boxes in the Declaration section on page 32</li>
+      </ul>
+
+      <div class="govuk-inset-text">
+        <ul class="govuk-list govuk-list--bullet">
+          <li>How your disability affects you form: <a href="https://pip-docs.herokuapp.com/government/uploads/system/uploads/PIP2_GB_NP_INTERACTIVE_2018_06.PDF">https://pip-docs.herokuapp.com/government/uploads/system/uploads/PIP2_GB_NP_INTERACTIVE_2018_06.PDF</a></li>
+          <li>Information booklet: <a href="https://pip-docs.herokuapp.com/government/uploads/system/uploads/PIP2-notes.pdf">https://pip-docs.herokuapp.com/government/uploads/system/uploads/PIP2-notes.pdf</a></li>
+          <li>Flyer: <a href="https://pip-docs.herokuapp.com/government/uploads/system/uploads/PIP-2-flyer-notes.pdf">https://pip-docs.herokuapp.com/government/uploads/system/uploads/PIP-2-flyer-notes.pdf</a></li>
+        </ul>
+      </div>
+
+      <p>The form is interactive so you can fill it on your computer, tablet or phone. You do not need to print it out. It works best on a computer or tablet.</p>
+
+      <p>Please read the information carefully and take time to answer the questions. You do not have to complete the form in one go.</p>
+
+      <p>You can ask a friend, relative, carer, or representative to help you complete the form either over the phone or in person if they live with you or visit you for a medical reason or to provide care.</p>
+
+      <p>If you do not want to continue with your PIP claim, please call us on 0800 121 4433 or Textphone: 0800 121 4493 if you have speech or hearing difficulties.</p>
+
+      <h2 class="govuk-heading-m">Help filling in the form</h2>
+
+      <p>Please read the information booklet to help you.</p>
+
+      <p>There is also an online DWP video you can watch about providing evidence that you might find helpful:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Providing information to support your claim: <a href="https://www.youtube.com/watch?v=KCMRGukO1TM&list=PLeysxjNpEPy8Y73-Ywm7OeAGjFc1Xc-It&index=3">https://www.youtube.com/watch?v=KCMRGukO1TM&list=PLeysxjNpEPy8Y73-Ywm7OeAGjFc1Xc-It&index=3</a></li>
+        <li>Claiming Personal Independence Payment (PIP): <a href="https://www.youtube.com/watch?v=3BEJg6RW1gg&list=PLC0aQWFFHARy_lYZbrnJfuXzhKWotacfM&index=2">https://www.youtube.com/watch?v=3BEJg6RW1gg&list=PLC0aQWFFHARy_lYZbrnJfuXzhKWotacfM&index=2</a></li>
+        <li>Personal Independence Payment (PIP) – Providing information to support your claim <a href="https://www.youtube.com/watch?v=naHk5KYa43Y&list=PLC0aQWFFHARy_lYZbrnJfuXzhKWotacfM&index=3">https://www.youtube.com/watch?v=naHk5KYa43Y&list=PLC0aQWFFHARy_lYZbrnJfuXzhKWotacfM&index=3</a></li>
+        <li>Your face-to-face Personal Independence Payment (PIP) assessment <a href="https://www.youtube.com/watch?v=1FVCuf_3il0&list=PLC0aQWFFHARy_lYZbrnJfuXzhKWotacfM&index=4">https://www.youtube.com/watch?v=1FVCuf_3il0&list=PLC0aQWFFHARy_lYZbrnJfuXzhKWotacfM&index=4</a></li>
+        <li>Key things to know about your Personal Independence Payment (PIP) decision: <a href="https://www.youtube.com/watch?v=jqzHvnSMzXk&list=PLC0aQWFFHARy_lYZbrnJfuXzhKWotacfM&index=5">https://www.youtube.com/watch?v=jqzHvnSMzXk&list=PLC0aQWFFHARy_lYZbrnJfuXzhKWotacfM&index=5</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Evidence to support your claim</h2>
+
+      <p>Help us to understand your needs by providing supporting evidence:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>do send recent information that shows how you carry out activities and how this is affected by your long-term health condition or disability</li>
+        <li>do not send general information about your condition like fact sheets or information from the internet</li>
+      </ul>
+
+      <p>If you are sending your evidence back by post, only send us photocopies. We cannot return any documents to you.</p>
+
+      <p>This might be care plans, reports, letters, or other information from health professionals. You can send photos.</p>
+
+      <p>More details on the kind of supporting evidence we want can be found in the information booklet.</p>
+
+      <p>Only send us things you have already. Do not leave the house to collect this information or contact your doctor or hospital during the current outbreak of coronavirus (COVID-19).</p>
+
+      <h2 class="govuk-heading-m">When to return your form</h2>
+
+      <p>You need to return send back your form 15 June 2020.</p>
+
+      <p>Do not delay sending your form back if you are waiting for more information. Send us what you can.</p>
+
+      <p>If you do not return the form by this date we may end your PIP claim. If you currently get Disability Living Allowance this will stop.</p>
+
+      <h2 class="govuk-heading-m">How to return your form by email</h2>
+
+      <p>The best way to send the form back to us is by email.</p>
+
+      <p>Please save your completed form on your device:</p>
+
+      <ol class="govuk-list govuk-list--number">
+        <li>Go to your email</li>
+        <li>Attach your completed form and any additional information to a draft email</li>
+        <li>Send the email to <a href="mailto:applyforpip@dwp.gov.uk">applyforpip@dwp.gov.uk</a></li>
+        <li>Check your emails and phone – we will send you an email and text message to confirm we have received the form</li>
+      </ol>
+
+      <p>If you cannot return your form by email, you can call 0800 121 4433 and we will post a form to you.</p>
+
+      <p>Try to return the form by the date shown above. But you can ask for more time if you need it. Call 0800 121 4433 or Textphone: 0800 121 4493 if you have speech or hearing difficulties.</p>
+
+      <h2 class="govuk-heading-m">If you want to send us further information</h2>
+
+      <p>If you want to send us more supporting evidence after you have already returned the form, you can send it to <a href="mailto:applyforpip@dwp.gov.uk">applyforpip@dwp.gov.uk</a>. Please include your name and National Insurance in the covering email so we can link it to your claim.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>When we receive your form, we may contact you to arrange an assessment over the phone with a health professional.</p>
+
+      <p>This will give you the chance to tell us more about how your long-term health condition or disability affects your daily life.</p>
+
+      <p>If we ask you to take part in an assessment over the phone, you must take part or your PIP claim may end. However, if you have given us enough information, we may not need to contact you.</p>
+
+      <p>If we have your mobile phone number we will keep you up to date about your PIP claim by text messages, unless you decided to opt out.</p>
+
+      <p>Yours sincerely,</p>
+      <p>Office Manager</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}
