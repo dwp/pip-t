@@ -182,3 +182,18 @@ abbr {
 .sans * {
   font-family: sans-serif !important;
 }
+
+.notify-width-container {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.notify-width-container-border {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: -10px;
+  padding-top: 10px;
+  border-bottom: 10px solid #1d70b8;
+}

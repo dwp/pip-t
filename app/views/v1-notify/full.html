@@ -13,7 +13,7 @@
     homepageUrl: "/",
     serviceName: &nbsp;,
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    containerClasses: "notify-width-container-border"
   }) }}
 {% endblock %}
 
@@ -23,8 +23,10 @@
 
 {% block content %}
 
+<div class="notify-width-container">
+
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds sans">
+    <div class="govuk-grid-column-full sans">
 
       <p>Dear Sarah,</p>
 
@@ -135,6 +137,8 @@
     </div>{# /govuk-grid-column-two-thirds #}
 
   </div>{# /govuk-grid-row #}
+
+  </div>
 
 {% endblock %}
 {% block footer %}
