@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Personal Independence Payment (PIP) form – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/_work-in-progress.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Personal Independence Payment (PIP) form</h1>
+
+      <section class="attachment embedded">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/875507/SA970_2020.pdf"><img alt="" src="/public/thumbnails/pdf.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="govuk-!-font-size-27 govuk-!-font-weight-regular govuk-!-margin-top-0"><a href="#">How your disability affects you form - PDF</a></h2>
+          <p class="metadata govuk-body-s">
+            <span class="type"><abbr title="Portable Document Format">PDF</abbr></span>, <span class="file-size">168KB</span>, <span class="page-length">34 pages</span>
+          </p>
+          <div>
+            <p class="govuk-body-s">
+              To complete the form in PDF format, save it on to your device and open it in <a href="https://get.adobe.com/uk/reader/">Acrobat Reader</a> version 11 or later.
+            </p>
+          </div>
+        </div>{# /attachment-details #}
+      </section>
+
+      <section class="attachment embedded">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/875507/SA970_2020.pdf"><img alt="" src="/public/thumbnails/pdf.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h2 class="govuk-!-font-size-27 govuk-!-font-weight-regular govuk-!-margin-top-0"><a aria-describedby="attachment-4084681-accessibility-help" href="#">How your disability affects you form - Word</a></h2>
+          <p class="metadata govuk-body-s">
+            <span class="type">DOC</abbr>, <span class="file-size">265KB</span>, <span class="page-length">35 pages</span>
+          </p>
+        </div>{# /attachment-details #}
+      </section>
+
+      <div style="clear: both; margin-bottom: 30px;"></div>
+
+      <h2 class="govuk-heading-m">Supporting documents</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/public/downloads/PIP2-notes.pdf" download>Information booklet (PDF)</a></li>
+        <li><a href="/public/downloads/PIP-2-flyer-notes.pdf" download>Flyer (PDF)</a></li>
+      </ul>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+{#   {% include "includes/_page-title.html" %} #}
+
+{% endblock %}
