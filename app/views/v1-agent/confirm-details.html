@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set pageTitle = "Confirm their email address – Email a PIP2 form" %}
+{% set pageTitle = "Confirm their details – Email a PIP2 form" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
@@ -21,12 +21,13 @@
 
       <form action="/v1-agent/confirmation" method="post" novalidate>
       
-        <h1 class="govuk-heading-l">Confirm their email address</h1>
+        <h1 class="govuk-heading-l">Confirm their details</h1>
 
-        <p class="govuk-body-l">email-just-entered@gmail.com</p>
+        <p class="govuk-body-l">David Smith<br>
+        email-just-entered@gmail.com</p>
 
         <button class="govuk-button" data-module="govuk-button">
-          This is correct, send the email
+          These are correct, send the email
         </button>
         &nbsp;
         <a href="/v1-agent/index" class="govuk-button govuk-button--secondary" data-module="govuk-button">There’s a mistake, go back</a>

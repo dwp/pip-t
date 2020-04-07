@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set pageTitle = "Claimant’s email address – Email a PIP2 form" %}
+{% set pageTitle = "Claimant’s details – Email a PIP2 form" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
@@ -18,23 +18,33 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/v1-agent/confirm-email" method="post" novalidate>
+      <h1 class="govuk-heading-l">Claimant’s details</h1>
+
+      <form action="/v1-agent/confirm-details" method="post" novalidate>
+
         <div class="govuk-form-group">
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--l" for="email">
-              Claimant’s email address
-            </label>
-          </h1>
+          <label class="govuk-label" for="full-name">
+            Full name
+          </label>
+          <input class="govuk-input" id="full-name" name="full-name" type="text" autocomplete="name" spellcheck="false">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="email">
+            Email address
+          </label>
           <input class="govuk-input" id="email" name="email" type="email" autocomplete="off" spellcheck="false">
         </div>
+       
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
+
       </form>
     </div>{# /govuk-grid-column-two-thirds #}
   </div>{# /govuk-grid-row #}
 
-  {% include "includes/_page-title.html" %}
+{% include "includes/_page-title.html" %}
 
 {% endblock %}
 
