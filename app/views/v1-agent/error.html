@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Something’s gone wrong – Email a PIP2 form" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "v1-agent/_header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/_work-in-progress.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Something’s gone wrong</h1>
+
+      <p><a href="/v1-agent/index">Start again</a></p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}
