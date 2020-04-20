@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Service unavailable – Send your PIP documents – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "v2/_header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v2/_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
+
+      <p>We are currently working to put the service back online. Please try again later.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

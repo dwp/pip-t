@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "What do you want to upload? – Send your PIP documents – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "v2/_header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v2/_banner.html" %}
+  {% include "v2/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/v2/interruption-screen" method="post" novalidate>
+
+        {{ govukRadios({
+          idPrefix: "where-do-you-live",
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "What do you want to upload?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "just-form",
+              text: "Just the ‘How your disability affects you’ form"
+            },
+            {
+              value: "just-evidence",
+              text: "Just evidence to support your claim"
+            },
+            {
+              value: "both",
+              text: "Both the ‘How your disability affects you’ form and evidence to support the claim"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+    {% include "v2/_contact-sidebar.html" %}
+
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}
