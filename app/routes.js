@@ -197,4 +197,15 @@ router.get('/v1/notifications-cya', function(req, res) {
   res.render('v1/notifications', { 'cya' : 'true' });
 });
 
+router.get('/v2/upload-choice-answer', function(req, res) {
+
+  let question = req.session.data['question']
+
+  if (question === 'just-form') {
+      res.redirect('upload')
+    } else {
+      res.redirect('interruption-screen')
+    }
+});
+
 module.exports = router
