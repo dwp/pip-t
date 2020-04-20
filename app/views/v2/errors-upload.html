@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set pageTitle = "NEEDED" %}
+{% set pageTitle = "Error – Upload your files – Send your PIP documents – GOV.UK" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
@@ -19,231 +19,44 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="#" method="post" novalidate>
 
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-          <h2 class="govuk-error-summary__title" id="error-summary-title">
-            There is a problem
-          </h2>
-          <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-              <li>
-                <a href="#file-upload-0">The file must be smaller than XXMB</a>
-              </li>
-            </ul>
-          </div>
-        </div>{# /govuk-error-summary #}
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          If no file has been selected:<br>
+          <strong class="redtext">Select a file</strong>
+        </li>
+        <li>
+          If the file is the wrong file type: [waiting for confirmation from Mike and Steve but use this a placeholder…]<br>
+          <strong class="redtext">The selected file must be a PDF, JPG, BMP or PNG (might also need file formats to suport the accessible Word version)</strong>
+        </li>
+        <li>
+          If there is only one file and it’s too big:<br>
+          <strong class="redtext">The selected file must be smaller than 10MB</strong>
+        </li>
+        <li>
+          If there is more than one file and the combined size is too big:<br>
+          <strong class="redtext">The combined size of the selected files must be smaller than 10MB</strong>
+        </li>
+        <li>
+          If there was an unknown problem and the file was not uploaded:<br>
+          <strong class="redtext">The selected file could not be uploaded – try again</strong>
+        </li>
+        <li>
+          If the file contains a virus [can it detect this?]:<br>
+          <strong class="redtext">The selected file contains a virus</strong>
+        </li>
+        <li>
+          If the file is password protected [can it detect this?]:<br>
+          <strong class="redtext">The selected file is password protected</strong>
+        </li>
+        <li>
+          If there is a limit on how many files the user can select [Is there a limit?]:<br>
+          <strong class="redtext">You can only select up to xx files at the same time</strong>
+        </li>
 
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">{{legend}}</h1>
-          </legend>
-          {{ govukFileUpload({
-            id: "file-upload-0",
-            name: "file-upload-0",
-            label: {
-              text: "Upload a file"
-            },
-            errorMessage: {
-              text: "The file must be smaller than XXMB"
-            }
-          }) }}
-        </fieldset>
-        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
-          Continue
-        </button>
-      </form>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <form action="#" method="post" novalidate>
-
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-          <h2 class="govuk-error-summary__title" id="error-summary-title">
-            There is a problem
-          </h2>
-          <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-              <li>
-                <a href="#file-upload-1">The file must be a PDF, JPG, BMP, PNG, DOC, RTF or TIF</a>
-              </li>
-            </ul>
-          </div>
-        </div>{# /govuk-error-summary #}
-
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">{{legend}}</h1>
-          </legend>
-          {{ govukFileUpload({
-            id: "file-upload-1",
-            name: "file-upload-1",
-            label: {
-              text: "Upload a file"
-            },
-            errorMessage: {
-              text: "The selected file must be a PDF, JPG, BMP, PNG or TIF"
-            }
-          }) }}
-        </fieldset>
-        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
-          Continue
-        </button>
-      </form>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <form action="#" method="post" novalidate>
-
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-          <h2 class="govuk-error-summary__title" id="error-summary-title">
-            There is a problem
-          </h2>
-          <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-              <li>
-                <a href="#file-upload-2">The file must be smaller than XXMB</a>
-              </li>
-            </ul>
-          </div>
-        </div>{# /govuk-error-summary #}
-
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">{{legend}}</h1>
-          </legend>
-          {{ govukFileUpload({
-            id: "file-upload-2",
-            name: "file-upload-2",
-            label: {
-              text: "Upload a file"
-            },
-            errorMessage: {
-              text: "The selected file must be smaller than XXMB"
-            }
-          }) }}
-        </fieldset>
-        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
-          Continue
-        </button>
-      </form>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <form action="#" method="post" novalidate>
-
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-          <h2 class="govuk-error-summary__title" id="error-summary-title">
-            There is a problem
-          </h2>
-          <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-              <li>
-                <a href="#file-upload-3">No file has been chosen</a>
-              </li>
-            </ul>
-          </div>
-        </div>{# /govuk-error-summary #}
-
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">{{legend}}</h1>
-          </legend>
-          {{ govukFileUpload({
-            id: "file-upload-3",
-            name: "file-upload-3",
-            label: {
-              text: "Upload a file"
-            },
-            errorMessage: {
-              text: "No file has been chosen"
-            }
-          }) }}
-        </fieldset>
-        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
-          Continue
-        </button>
-      </form>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <form action="#" method="post" novalidate>
-
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-          <h2 class="govuk-error-summary__title" id="error-summary-title">
-            There is a problem
-          </h2>
-          <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-              <li>
-                <a href="#file-upload-4">The selected file is password protected</a>
-              </li>
-            </ul>
-          </div>
-        </div>{# /govuk-error-summary #}
-
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">{{legend}}</h1>
-          </legend>
-          {{ govukFileUpload({
-            id: "file-upload-4",
-            name: "file-upload-4",
-            label: {
-              text: "Upload a file"
-            },
-            errorMessage: {
-              text: "The selected file is password protected"
-            }
-          }) }}
-        </fieldset>
-        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
-          Continue
-        </button>
-      </form>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <form action="#" method="post" novalidate>
-
-        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
-          <h2 class="govuk-error-summary__title" id="error-summary-title">
-            There is a problem
-          </h2>
-          <div class="govuk-error-summary__body">
-            <ul class="govuk-list govuk-error-summary__list">
-              <li>
-                <a href="#file-upload-5">The file could not be uploaded – try again</a>
-              </li>
-            </ul>
-          </div>
-        </div>{# /govuk-error-summary #}
-
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">{{legend}}</h1>
-          </legend>
-          {{ govukFileUpload({
-            id: "file-upload-5",
-            name: "file-upload-5",
-            label: {
-              text: "Upload a file"
-            },
-            errorMessage: {
-              text: "The selected file could not be uploaded – try again"
-            }
-          }) }}
-        </fieldset>
-        <button class="govuk-button" data-module="govuk-button" data-prevent-double-click="true" >
-          Continue
-        </button>
-      </form>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      </ul>
 
     </div>{# /govuk-grid-column-two-thirds #}
-
-    {% include "v1/_upload-sidebar.html" %}
 
   </div>{# /govuk-grid-row #}
 
