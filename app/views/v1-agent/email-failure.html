@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Email not sent – Email a PIP2 form" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "v1-agent/_header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/_work-in-progress.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Sorry, there is a problem</h1>
+      <p>The email was not sent.</p>
+
+      <a href="/v1-agent/index" class="govuk-button">Try again</a>
+
+      <p>If you keep seeing this error, email <a href="mailto:XXXX@XXXX.com?subject=Email a PIP2 form – Notify error&body=There is an issue with the ‘Email a PIP2 form and the Notify service">XXXX@XXXX.com</a>.</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}
+{% block footer %}
+{% endblock %}
