@@ -20,41 +20,85 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          If no file has been selected:<br>
-          <strong class="redtext">Select a file</strong>
-        </li>
-        <li>
-          If the file is the wrong file type: [waiting for confirmation from Mike and Steve but use this a placeholder…]<br>
-          <strong class="redtext">The selected file must be a PDF, JPG, BMP or PNG (might also need file formats to suport the accessible Word version)</strong>
-        </li>
-        <li>
-          If there is only one file and it’s too big:<br>
-          <strong class="redtext">The selected file must be smaller than 10MB</strong>
-        </li>
-        <li>
-          If there is more than one file and the combined size is too big:<br>
-          <strong class="redtext">The combined size of the selected files must be smaller than 10MB</strong>
-        </li>
-        <li>
-          If there was an unknown problem and the file was not uploaded:<br>
-          <strong class="redtext">The selected file could not be uploaded – try again</strong>
-        </li>
-        <li>
-          If the file contains a virus [can it detect this?]:<br>
-          <strong class="redtext">The selected file contains a virus</strong>
-        </li>
-        <li>
-          If the file is password protected [can it detect this?]:<br>
-          <strong class="redtext">The selected file is password protected</strong>
-        </li>
-        <li>
-          If there is a limit on how many files the user can select [Is there a limit?]:<br>
-          <strong class="redtext">You can only select up to xx files at the same time</strong>
-        </li>
+      <p>
+        If no file has been selected:
+      </p>
 
-      </ul>
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select a file",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <p>
+        If the file is the wrong file type:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "The selected file must be a Word document, PDF, JPG, BMP, PNG or TIF",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <p>(Waiting for confirmation from Mike and Steve on file formats. We might also need to support the accessible Word version soon.)</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <p>
+        If there is only one file and it’s too big:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "The selected file must be smaller than 10MB",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+      <p>
+        If there was an unknown problem and the file was not uploaded:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "The selected file could not be uploaded – try again",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <p>
+        If there is more than one file and the combined size is too big:<br>
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "The combined size of the selected files must be smaller than 10MB",
+            href: "#"
+          }
+        ]
+      }) }}
 
     </div>{# /govuk-grid-column-two-thirds #}
 
