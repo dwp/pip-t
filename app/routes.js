@@ -197,6 +197,8 @@ router.get('/v1/notifications-cya', function(req, res) {
   res.render('v1/notifications', { 'cya' : 'true' });
 });
 
+// v2
+
 router.get('/v2/upload-choice-answer', function(req, res) {
 
   let question = req.session.data['question']
@@ -207,5 +209,23 @@ router.get('/v2/upload-choice-answer', function(req, res) {
       res.redirect('interruption-screen')
     }
 });
+
+// v3
+
+
+router.get('/v3/uploaded-files-logic', function(req, res) {
+
+  let question = req.session.data['question']
+
+  if (question === 'yes') {
+      res.redirect('upload')
+    } else {
+      res.redirect('confirmation')
+    }
+});
+
+
+
+
 
 module.exports = router
