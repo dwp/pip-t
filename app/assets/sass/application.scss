@@ -242,3 +242,5 @@ body {
 .redtext {
   color: govuk-colour("red");
 }
+
+a:visited {color: $govuk-link-colour;}
