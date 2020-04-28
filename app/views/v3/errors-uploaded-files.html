@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% set pageTitle = "Check your uploaded your files – Send your PIP documents – GOV.UK" %}
+{% set pageTitle = "Error – Check your uploaded your files – Send your PIP documents – GOV.UK" %}
 
 {% block pageTitle %}
   {{ pageTitle }}
@@ -21,6 +21,16 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form action="/v3/uploaded-files-logic" method="post" novalidate>
+
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select ‘yes’ if you want to upload another file",
+            href: "#"
+          }
+        ]
+      }) }}
 
         <h1 class="govuk-heading-l">Check your uploaded files</h1>
 
@@ -68,13 +78,16 @@
           </div>
         </dl>
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group govuk-form-group--error">
 
-          <fieldset class="govuk-fieldset">
+          <fieldset class="govuk-fieldset" aria-describedby="answer-error">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             Do you want to upload another file?
           </legend>
+          <span id="changed-name-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select ‘yes’ if you want to upload another file
+    </span>
 
           <div class="govuk-radios">
             <div class="govuk-radios__item">
