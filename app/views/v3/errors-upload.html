@@ -82,6 +82,21 @@
         ]
       }) }}
 
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+      <p>
+        If a file could not be deleted:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "Something’s gone wrong",
+        errorList: [
+          {
+            html: "File named file-3.png was not deleted. Try again."
+          }
+        ]
+      }) }}
+
     </div>{# /govuk-grid-column-two-thirds #}
 
   </div>{# /govuk-grid-row #}
