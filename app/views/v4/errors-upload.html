@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Error – Upload your files – Send your Personal Independence Payment documents – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "v4/_header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v4/_banner.html" %}
+  {% include "v3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p>
+        If no file has been selected:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "No file has been chosen",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <p>
+        If the file is the wrong file type:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "The selected file must be a Word document, PDF, JPG, BMP, PNG or TIF",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <p>
+        If the file or combined file size is too big:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "The combined size of all your files must be less than 10MB",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+      <p>
+        If there was an unknown problem and the file was not uploaded:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "The selected file could not be uploaded – try again",
+            href: "#"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      
+      <p>
+        If a file could not be deleted:
+      </p>
+
+      {{ govukErrorSummary({
+        titleText: "Something’s gone wrong",
+        errorList: [
+          {
+            html: "File named file-3.png was not deleted. Try again."
+          }
+        ]
+      }) }}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}
