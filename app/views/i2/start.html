@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Send your PIP documents – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v3/_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Send your PIP documents</h1>
+
+      <p>Use this service to upload and send your Personal Independence Payment (PIP) documents to the Department for Work and Pensions. These can be:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your filled-in ‘How your disability affects you’ (PIP2) form</li>
+        <li>any supporting evidence for your PIP application</li>
+      </ul>
+
+      <p>Only use the service if you’ve already applied for PIP and you’ve agreed to upload your documents online.</p>
+
+      <p>You can use this service more than once to upload and send documents at different times.</p>
+
+      <h2 class="govuk-heading-l">Before you start</h2>
+
+      <p>Take photos or scans of any paper documents that you need to send as supporting evidence.</p>
+
+      <p>Make sure you save all the documents you need, including your completed ‘How you disability affects you’ form, to the device you are using.</p>
+
+
+      {{ govukButton({
+        text: "Start now",
+        href: "/v3/email",
+        isStartButton: true
+      }) }}
+
+      {% include "v3/_contact-reveal.html" %}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+    {% include "v3/_contact-sidebar.html" %}
+
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}
