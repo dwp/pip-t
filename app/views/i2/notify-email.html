@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Personal Independence Payment: Tell us how your health condition or disability affects you" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/",
+    containerClasses: "notify-width-container-border"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/_work-in-progress.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="notify-width-container">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full sans">
+
+      <p>Dear [Full name],</p>
+
+      <p>Thank you for starting your Personal Independence Payment (PIP) claim.</p>
+
+      <p>We need to find out more information about your daily living and mobility needs to help us make our decision.</p>
+
+      <h2 class="govuk-heading-m">What you need to do</h2>
+
+      <p>Download, save and fill in the ‘How your disability affects you’ form <a href="#">[Service URL]/form-and-help-information</a></p>
+
+      <p>Gather any supporting information that shows how your condition or disability affects you.</p>
+
+      <p>Help on how to fill in the form and gathering supporting information is also available on the ‘How your disability affects you’ form page.</p>
+
+      <p>Upload your filled-in form and any supporting information to <a href="#">[Service URL]</a> by [date – 93 days from send date] or sooner if you can.</p>
+
+      <p>If you do not upload the form by this date we may end your PIP claim. If you currently get Disability Living Allowance this will stop.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>We may call you to check you have received this email and if you need any support. The number may show as ‘unknown’ or begin with 0800. Please answer the call if you can.</p>
+
+      <p>When you have returned your form, you will get an email or text message to confirm that we have received your form.</p>
+
+      <p>Yours sincerely,</p>
+
+      <p>Office manager</p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+</div>
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

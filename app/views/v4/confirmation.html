@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Files sent – Send your Personal Independence Payment documents – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "v4/_header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v4/_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    	{{ govukPanel({
+        titleText: "Files sent"
+      }) }}
+      </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-column-full #}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <p><a href="/v3/start">Use this service again</a> if you need to upload and send more documents.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+
+      <p>You’ll get a confirmation email in the next hour. You might need to check your spam email folder.</p>
+
+      <p>If you do not get the confirmation email in the next hour call the Personal Independence Payment enquiry line:</p>
+
+      <div class="indent-hairline">
+        {% include "v3/_contact.html" %}
+      </div>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+    
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

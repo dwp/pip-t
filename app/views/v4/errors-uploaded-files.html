@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Error – Check your uploaded your files – Send your Personal Independence Payment documents – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "v4/_header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v4/_banner.html" %}
+  {% include "v3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/v3/uploaded-files-logic" method="post" novalidate>
+
+        {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Select ‘yes’ if you want to upload another file",
+            href: "#yes"
+          }
+        ]
+      }) }}
+
+        <h1 class="govuk-heading-l">Check your uploaded files</h1>
+
+        <h2 class="govuk-heading-m">Files added</h2>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 1
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/">file-1.png</a>, 2MB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0">
+                Delete<span class="govuk-visually-hidden"> file 1</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 2
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/">file-2.png</a>, 6MB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0">
+                Delete<span class="govuk-visually-hidden"> file 2</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              File 3
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <a download href="/">file-3.png</a>, 2MB
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="#" class="govuk-button govuk-button--secondary govuk-!-margin-bottom-0">
+                Delete<span class="govuk-visually-hidden"> file 3</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-form-group govuk-form-group--error">
+
+          <fieldset class="govuk-fieldset" aria-describedby="answer-error">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you want to upload another file?
+          </legend>
+          <span id="changed-name-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select ‘yes’ if you want to upload another file
+    </span>
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes" name="question" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no" name="question" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no">
+                No, send my documents
+              </label>
+            </div>
+          </div>
+
+          </fieldset>
+        </div>{# /govuk-form-group #}
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+        </button>
+
+        {% include "v3/_contact-reveal.html" %}
+
+      </form>
+     
+    </div>{# /govuk-grid-column-two-thirds #}
+    
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

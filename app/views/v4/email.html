@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Your email address – Send your Personal Independence Payment documents – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "v4/_header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v4/_banner.html" %}
+  {% include "v3/_back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/v3/upload" method="post" novalidate>
+
+        {{ govukInput({
+          label: {
+            text: "Your email address",
+            isPageHeading: true,
+            classes: "govuk-label--l"
+          },
+          hint: {
+            text: "This must be the same email address your PIP form was sent to."
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+          attributes: {
+            spellcheck: "false"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      {% include "v3/_contact-reveal.html" %}
+
+    </div>{# /govuk-grid-column-two-thirds #}
+
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

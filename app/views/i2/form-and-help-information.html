@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Personal Independence Payment: How your disability affects you form – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: &nbsp;,
+    serviceUrl: "/"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "v3/_banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Personal Independence Payment: ‘How your disability affects you’ form and help information</h1>
+
+      {{ govukInsetText({
+        text: "Only use this form if you have already started your Personal Independence Payment (PIP) application and received an email with instructions."
+      }) }}
+
+      <h2 class="govuk-heading-m">Form</h2>
+
+      <section class="attachment embedded" style="margin-top: -10px">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="#"><img alt="" src="/public/thumbnails/pip2-pdf.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h3 class="govuk-!-font-size-27 govuk-!-font-weight-regular govuk-!-margin-top-0"><a href="/public/downloads/PIP2_GB_NP_INTERACTIVE_2018_06.pdf">How your disability affects you form – download and save</a></h3>
+          <p class="metadata govuk-body-s">
+            Ref: PIP 2<br>
+            <abbr title="Portable Document Format">PDF</abbr>, xxxKB, 33 pages
+          </p>
+        </div>{# /attachment-details #}
+      </section>
+
+      <section class="attachment embedded">
+        <div class="attachment-thumb">
+          <a aria-hidden="true" class="thumbnail" href="#"><img alt="" src="/public/thumbnails/pip2-word.png"></a>
+        </div>
+        <div class="attachment-details">
+          <h3 class="govuk-!-font-size-27 govuk-!-font-weight-regular govuk-!-margin-top-0"><a href="#">How your disability affects you form (accessible version) – download and save </a></h3>
+          <p class="metadata govuk-body-s">
+            Ref: PIP 2<br>
+            Word document, xxxKB, 33 pages
+          </p>
+        </div>{# /attachment-details #}
+      </section>
+
+      <div style="clear: both; margin-bottom: 30px;"></div>
+
+      <h2 class="govuk-heading-m">Help information</h2>
+
+      <p>The form works best on a computer or tablet. You do not need to print it out. Save the form somewhere you can easily find it later.</p>
+
+      <p>You can ask a friend, relative, carer, representative, or local support organisation to help you fill in the form over the phone. They should only help you in person if they live with you or visit you for a medical reason or to provide care. </p>
+
+      <p><a href="#">Get help with filling in the form and providing supporting information (PDF)</a> [link to info booklet]</p>
+
+      <p><a href="#">Get help on how to download, save, fill in and upload the form (PDF)</a> [link to additional information]</p>
+
+      <h3 class="govuk-heading-s">Information to support your claim</h3>
+
+      <p><a href="#">Get help with the types of supporting information you should send (PDF)</a> [link to flyer]</p>
+
+      <p><a href="#">Watch a DWP video on YouTube about providing information to support your claim</a></p>
+
+      <p>Do not delay sending your form back if you are waiting for more supporting information.</p>
+
+      <p>Only send us supporting information you have already.</p> 
+
+      <p>Do not contact your GP or health professional to ask for new or additional information as they may charge you for this.</p>
+
+      <p>Do not leave the house or contact your doctor or hospital during the coronavirus (COVID-19) outbreak to collect supporting information.</p>
+
+    </div>{# /govuk-grid-column-full #}
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}

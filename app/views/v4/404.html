@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% set pageTitle = "Page not found – Send your PIP form – GOV.UK" %}
+
+{% block pageTitle %}
+  {{ pageTitle }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: serviceName,
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Page not found</h1>
+      <p>If you typed the web address, check it is correct.</p>
+      <p>If you pasted the web address, check you copied the entire address.</p>
+      <p>
+        If the web address is correct or you selected a link or button, <a href="https://www.gov.uk/pip/change-of-circumstances">contact the Personal Independence Payment enquiry line</a> if you need to speak to someone about your tax credits.
+      </p>
+
+    </div>{# /govuk-grid-column-two-thirds #}
+  </div>{# /govuk-grid-row #}
+
+  {% include "includes/_page-title.html" %}
+
+{% endblock %}
